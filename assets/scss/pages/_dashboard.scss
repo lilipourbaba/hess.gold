@@ -1,0 +1,117 @@
+@use "../utils/" as *;
+
+
+.woocommerce-MyAccount-navigation-link {
+    border: 1px solid $color_natural_300;
+    border-radius: 0.5rem;
+    padding: 4px 0.5rem;
+
+    &--edit-account::after {
+        content: '\eb37';
+        font-family: "iconsax";
+    }
+
+    &--edit-address::after {
+        content: '\e8b1';
+        font-family: "iconsax";
+    }
+
+    &--orders::after {
+        content: '\eb8c';
+        font-family: "iconsax";
+    }
+
+    &--customer-logout::after {
+        content: '\eb11';
+        font-family: "iconsax";
+    }
+
+    @include media_query("lg") {
+        border: 0;
+    }
+
+}
+
+
+
+.woocommerce-MyAccount-navigation li .is-active {
+    border: 1px solid $color_secondary;
+    border-radius: 8px;
+
+    &::after {
+        color: $color_secondary;
+    }
+
+    @include media_query("lg") {
+        border: 0;
+        color: $color_secondary;
+    }
+}
+
+.factor {
+    border: 1px solid $color_natural_100
+}
+
+.orders {
+
+    div {
+        padding: 8px 12px;
+        color: $color-natural-100;
+
+        span {
+            padding-inline: 8px;
+        }
+    }
+
+    .status-completed {
+        background-color: $color_success;
+    }
+
+    .status-processing {
+        background-color: $color_info;
+    }
+
+    .status-on-hold {
+        background-color: $color_info;
+    }
+
+    .status-failed,
+    .status-cancelled {
+        background-color: $color_error;
+    }
+
+    .status-pending {
+        background-color: $color_warning;
+    }
+
+    table {
+        color: $color-primary;
+
+        th {
+            border: 1px solid #DDDDDD;
+            padding: 4px 8px;
+            background-color: $color-primary-300;
+        }
+
+        td {
+            border: 1px solid #DDDDDD;
+            padding: 12px;
+        }
+    }
+}
+
+.account_display_name {
+    width: 20%;
+}
+
+.name-edit p {
+    width: 50%;
+}
+
+.edit-account input {
+    @include fs('h6');
+
+    &::placeholder {
+        @include fs('h6')
+    }
+}

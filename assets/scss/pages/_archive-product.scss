@@ -1,0 +1,242 @@
+@use "../utils/" as *;
+
+
+.content{
+                        margin-bottom: 70px;
+
+    img{
+            margin-block: 30px;
+    border-radius: 8px;
+    }
+    p{
+                    margin-bottom: 30px;
+
+    }
+}
+.middle {
+    position: relative;
+    direction: ltr;
+}
+
+.slider {
+    position: relative;
+    z-index: 1;
+    height: 3px;
+    margin: 0 15px;
+}
+
+.slider>.track {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background-color: #e1e0e2;
+}
+
+.slider>.range {
+    position: absolute;
+    z-index: 2;
+    left: 1%;
+    right: 1%;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background-color: #5b5a5c;
+}
+
+.slider>.thumb {
+    position: absolute;
+    z-index: 3;
+    width: 16px;
+    height: 16px;
+    background-color: #5b5a5c;
+    border-radius: 50%;
+}
+
+.slider>.thumb.left {
+    left: 1%;
+    transform: translate(-15px, -10px);
+    top: 2px;
+}
+
+.slider>.thumb.right {
+    right: 1%;
+    transform: translate(15px, -10px);
+    top: 2px;
+}
+
+input[type="range"] {
+    // position: absolute;
+    pointer-events: none;
+    -webkit-appearance: none;
+    z-index: 2;
+    height: 7px;
+    width: 100%;
+    opacity: 1;
+    background-color: $color_primary;
+        appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    pointer-events: all;
+    width: 30px;
+    height: 30px;
+    border-radius: 0;
+    border: 0 none;
+    background-color: red;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+}
+
+.archive-product-sidebar {
+    width: 20%;
+
+    .category a {
+        min-height: 90px;
+        transition: all 0.8s ease-in-out;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    img {
+        border-radius: 50%;
+        box-shadow: 0 0 20px -9px $color_primary;
+        aspect-ratio: 1 / 1;
+        // height: 100%;
+    }
+
+    .filters {
+        border: 1px solid $color_primary_300;
+        color: $color_primary;
+        border-radius: $radius;
+
+        &.price {
+            width: 30%;
+            text-align: center;
+        }
+
+    }
+
+    @include media_query('lg') {
+        width: 100%;
+    }
+}
+
+.archive-product-main {
+    width: 80%;
+
+    @include media_query('lg') {
+        width: 100%;
+    }
+}
+
+.archive-product-sidebar form {
+    // @include media_query("md") {
+    //     display: none;
+    // }
+}
+
+.archive-product-sidebar .mobile_view {
+    @include media_query("md") {
+        display: block;
+    }
+}
+
+.mobile_res {
+    display: none;
+    position: absolute;
+    margin: 0;
+    background: white;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.backdrop {
+    background-color: #5b5a5c;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    display: none;
+    z-index: 99;
+    opacity: 0.8;
+}
+
+.product-card h5 span.amount bdi {
+    // text-decoration: underline;
+
+    border-bottom: 1px solid $color_primary-400;
+}
+
+.amount bdi {
+    // text-decoration: underline;
+    display: flex;
+    gap: 4px;
+    flex-direction: row-reverse;
+}
+
+.active_filter {
+    border: 1px solid rgb(247, 105, 105);
+    border-radius: 8px;
+}
+
+.apply_filter {
+    border-radius: $radius;
+}
+
+
+.fil_item {
+    border-radius: 4px;
+    background-color: #C5C5C5;
+    padding: 2px 6px;
+    color: $color_primary;
+
+    &:hover {
+        box-shadow: $shadow;
+
+        i {
+            color: $color_secondary;
+        }
+    }
+
+}
+
+.product-card {
+    .cart-gallery {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+    }
+
+    img,
+    div {
+        transition: all 0.8s ease-in-out;
+    }
+
+    transition: all 0.8s ease-in-out;
+
+    &:hover {
+        .cart-img {
+            opacity: 0;
+            visibility: hidden;
+            height: 0;
+        }
+
+        .cart-gallery {
+            opacity: 1;
+            visibility: visible;
+            height:auto;
+        }
+    }
+}
+
+.fil_item_remove {}

@@ -1,0 +1,213 @@
+@use "../utils" as *;
+
+.account_field {
+  border-bottom: 1px solid $color_primary_200;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  gap: 8px;
+
+  &.first-row {
+    width: 49%;
+  }
+
+  input {
+    width: 80%;
+  }
+}
+
+.password-input {
+  width: 100%;
+}
+
+.product-order-table {
+  tbody,
+  thead {
+    @include media_query("lg") {
+      width: 100%;
+    }
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    padding: 12px;
+    width: 30%;
+
+    @include media_query("lg") {
+      width: 100%;
+    }
+  }
+
+  @include media_query("lg") {
+    tbody tr {
+      display: flex;
+    }
+  }
+
+  th {
+    background-color: #eaeaea;
+  }
+
+  tr.form-bottom {
+    margin-bottom: 12px;
+  }
+
+  .remove {
+    background-color: #e9e9ea;
+    padding: 8px;
+
+    input {
+      background-color: $color_natural_100;
+    }
+
+    .qty {
+      @include media_query("lg") {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.woocommerce-billing-fields__field-wrapper {
+  .form-row {
+    border-bottom: 1px solid #c0bfbfa9;
+    box-shadow: 0 0 0.25rem rgba(145, 145, 145, 0.15);
+
+    margin: 0 0 21px !important ;
+    p {
+    }
+
+    label {
+      display: none !important;
+    }
+
+    input {
+      // border-bottom: 1px solid #ACACAC;
+      padding: 12px;
+      border: 0;
+      box-shadow: none;
+    }
+    span {
+      gap: 8px;
+    }
+    &#billing_first_name_field span {
+      display: flex;
+
+      &::before {
+        content: "\eb37";
+        font-family: "iconsax";
+      }
+    }
+
+    &#billing_last_name_field span {
+      display: flex;
+
+      &::before {
+        content: "\eb37";
+        font-family: "iconsax";
+      }
+    }
+
+    &#billing_postcode_field span {
+      display: flex;
+
+      &::before {
+        content: "\e8dd";
+        font-family: "iconsax";
+      }
+    }
+    &#billing_state_field , &#billing_city_field{
+      // content: "a";
+    //   width: 50%;
+    }
+    &#billing_phone_field span {
+      display: flex;
+
+      &::before {
+        content: "\e8ba";
+        font-family: "iconsax";
+      }
+    }
+
+    &#billing_email_field span {
+      display: flex;
+
+      &::before {
+        content: "\ea73";
+        font-family: "iconsax";
+      }
+    }
+
+    .select2-container--default .select2-selection--single {
+      background-color: #fff;
+      padding: 5px !important;
+      border: 0;
+      border-radius: 4px;
+      border-bottom: 1px solid #acacac;
+      height: 40px;
+    }
+  }
+}
+
+#billing_company_field span {
+  display: flex;
+
+  &::before {
+    content: "\eb28";
+    font-family: "iconsax";
+  }
+}
+
+.woocommerce-Address {
+  padding-inline: 20%;
+
+  address {
+    padding-inline-start: 30px;
+    @include fs("h4");
+    margin: 20px;
+  }
+}
+
+.woocommerce-address-fields {
+  .input-text {
+    border-bottom: 1px solid #e4e6ea;
+  }
+
+  .woocommerce-input-wrapper {
+    // border:1px solid #e4e6ea;
+    // padding: 5px;
+  }
+
+  .select2-selection,
+  .select2-selection--single {
+    border-color: #e4e6ea;
+  }
+
+  .select2-selection__rendered {
+    line-height: 55px;
+  }
+}
+
+.woocommerce-MyAccount-content {
+  padding: 40px;
+  box-shadow: 0 0 5px 0 #efefef;
+  border-radius: 9px;
+
+  strong {
+    color: $color-secondary;
+  }
+
+  a {
+    color: $color_natural-200;
+  }
+}
+
+ul.woocommerce-error {
+  padding: 30px;
+  border-top-color: $color-secondary;
+
+  &::before {
+    right: 90%;
+  }
+}

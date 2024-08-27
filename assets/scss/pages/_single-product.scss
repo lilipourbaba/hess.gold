@@ -1,0 +1,184 @@
+@use "../utils/" as *;
+.Gemstone-tables {
+  width: 48%;
+
+  .Gemstone {
+    background-color: rgba(0, 0, 0, 0.04);
+
+    span {
+      padding: 10px;
+      border: 1px solid $color_natural_300;
+      width: 100%;
+      display: block;
+    }
+  }
+  @include media_query("lg") {
+    width: 100%;
+    height: 25px;
+    overflow: hidden;
+  }
+}
+
+.select-attribute {
+  border: 1px solid $color_natural_300;
+  padding: 4px 8px;
+
+  select {
+    width: 100%;
+  }
+}
+
+.product-price {
+  width: 95%;
+
+  bdi {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 2px;
+  }
+}
+
+.add-to-cart {
+  width: 95%;
+}
+
+.woocommerce-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.woocommerce-variation-price .price {
+  display: flex;
+  justify-content: end;
+}
+td.value {
+  select {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 4px 8px;
+  }
+
+  i {
+    left: 10%;
+  }
+}
+.thumbSwiper {
+  margin: 10px;
+  .swiper-slide {
+    box-shadow: 0 0 21px -8px #919191bd;
+    border-radius: 18px;
+    margin-left: 10px;
+  }
+}
+.product_gallery {
+  height: 450px;
+  box-shadow: 0 0 21px -8px #919191bd;
+  border-radius: 18px;
+
+  .swiper-slide img {
+    width: 100%;
+    object-fit: contain;
+    transition: all 1.5s ease-in-out;
+
+    &:hover {
+      transform: scale(1.5);
+      box-shadow: $shadow;
+    }
+  }
+
+  .woocommerce-product-gallery__image img {
+    min-width: 100%;
+    box-shadow: $shadow;
+  }
+
+  @include media_query("md") {
+    height: 300px;
+  }
+}
+
+.thumbSwiper div {
+  max-width: 100px;
+  max-height: 100px;
+  // opacity: 0.8;
+}
+
+.custom {
+  z-index: 555555;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.767);
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  display: flex;
+  transition: all 0.8s ease-in-out;
+  &.active{
+     visibility: visible;
+  height:100vh;
+  opacity:1; 
+  }
+
+  #close_customize::before {
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+    padding: 8px;
+  }
+
+  .customize {
+    color: #54585f;
+    z-index: 88888;
+    width: 35%;
+    z-index: 99999;
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .custom-file-upload {
+      border: 0;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+
+    @include media_query("lg") {
+      width: 95%;
+      top: 15vh;
+    }
+  }
+
+  p {
+    border-bottom: 1px solid #b6b9be;
+  }
+}
+
+.detail {
+  .quantity {
+    display: none !important;
+  }
+
+  .share {
+    width: 10%;
+  }
+
+  button {
+    width: 70%;
+  }
+}
+
+.custom-table {
+  margin-bottom: 12px;
+  thead tr {
+    color: #fff;
+    background-color: $color_secondary !important;
+  }
+
+  tbody tr {
+    transition: all 0.8s ease-in-out !important;
+    &:hover {
+      background-color: #EAEAEA  !important;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@use "../utils/" as *;
+
+.hero {
+    height: 40vh;
+    background-color: #EDEDED;
+    h1{
+        font-weight: 800;
+    }
+
+    @include media_query("lg") {
+        flex-direction: column-reverse;
+        align-items: center;
+        height: 60vh;
+
+        div {
+            width: 100%;
+            align-items: center;
+        }
+
+        img {
+            width: 50%;
+        }
+    }
+
+}
+
+.contact-hero {
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @include media_query("lg") {
+        background-position: left;
+        align-items: flex-start;
+        justify-content: center;
+        background-size: 70%;
+    }
+}
+
+.contact-input div {
+    border-bottom: 1px solid $color-natural-200;
+    transition: all 0.3s ease;
+
+    &:hover {
+        border-bottom: 1px solid $color-secondary;
+        color: $color-secondary;
+    }
+}
+
+.contact-information {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    h3 {
+        margin-block: 16px;
+    }
+
+    .back {
+        padding: 8px 12px;
+        border-radius: 4px;
+        background: rgba(0, 0, 0, 0.02);
+
+        .social svg path {
+            fill: $color-secondary
+        }
+    }
+}

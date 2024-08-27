@@ -1,0 +1,27 @@
+@use "../utils" as *;
+
+table.text-natural {
+    tr:nth-of-type(odd) {
+        background-color: $color_natural_300;
+    }
+
+    th {
+        background-color: $color_natural_800;
+        color: $color_natural_100;
+    }
+
+    td {
+        padding: 8px 16px;
+        align-content: center;
+
+        &:nth-of-type(odd) {
+            border-left: 1px solid #ddd;
+        }
+
+
+    }
+}
+.guide_banner{
+    background-color: #4A4745;
+  
+}

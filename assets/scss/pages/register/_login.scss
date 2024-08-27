@@ -1,0 +1,130 @@
+@use "../../utils/" as *;
+
+.linetab {
+  h4 {
+    transition: all $transition;
+
+  }
+
+  .tab_content {
+    grid-template-rows: 0fr;
+    transition: all $transition;
+
+    div {
+      overflow: hidden;
+    }
+  }
+
+  &.active {
+    .tab_content {
+      grid-template-rows: 1fr;
+    }
+
+    h4 {
+      border-bottom: 2px solid $color_secondary;
+      transition: all $transition;
+    }
+  }
+}
+
+#register-form p {
+  border-bottom: 1px solid $color-natural-200;
+
+
+  input {
+    @include make_icon("\e9a6", $pseudo: 'after');
+  }
+}
+
+#customer_login {
+
+  left: 0;
+  height: 90vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  // -webkit-filter: blur(5px);
+  // -moz-filter: blur(5px);
+  // -o-filter: blur(5px);
+  // -ms-filter: blur(5px);
+  // filter: blur(5px);
+  z-index: 6;
+  position: absolute;
+      @include media_query("md") {
+align-items: flex-start;
+padding-top:10%
+      }
+
+}
+
+body.page-template-register {
+  height: 100vh;
+  overflow-y: hidden;
+
+  .main_header {
+    display: none;
+  }
+}
+
+.tabs {
+  display: none;
+}
+
+.login-page {
+  padding: 1.5rem;
+  border-radius: 16px;
+
+  .form-input {
+    border-bottom: 1px solid $color-primary-300;
+        display: flex;
+          align-items: center;
+          gap: 8px;
+        
+
+    input,
+    span {
+      width: 90%;
+    }
+  }
+
+  form .show-password-input {
+    top: 0;
+  }
+
+}
+
+.login-title {
+  border: 1px solid #DDDDDD;
+  border-radius: 50%;
+}
+
+#otp_pass {
+  width: 100%;
+  text-align: center;
+
+  &::placeholder {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    font-size: 100px;
+    text-align: center;
+    color: #ACACAC;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, .5);
+  -webkit-backdrop-filter: blur(1px);
+  backdrop-filter: blur(1px);
+  z-index: 9;
+  cursor: not-allowed;
+}
+
+.login-page {
+  // opacity: 0.5;
+}

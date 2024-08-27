@@ -1,0 +1,56 @@
+@use "../utils" as *;
+
+footer,
+.faq {
+
+  .tab {
+    span::after {
+      content: "\eb75";
+      font-family: "iconsax" !important;
+      border-radius: 50%;
+      transition: all $transition;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tab_content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: all $transition;
+
+      div {
+        overflow: hidden;
+      }
+    }
+
+    &.active {
+      .tab_content {
+        grid-template-rows: 1fr;
+      }
+
+      span::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.home .tab.active span::after {
+  background-color: $color-secondary;
+  color: $color-natural-100;
+}
+
+.faq {
+  .tab {
+    transition: all 0.8s ease-in-out;
+
+    span::after {
+      content: "\eb75";
+      font-family: "iconsax" !important;
+      border: 1px solid #dddddd;
+    }
+  }
+}
